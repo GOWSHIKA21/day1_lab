@@ -56,7 +56,7 @@ AI-Day-1-Lab/
 
 .env contains the Groq API key and is intentionally excluded from GitHub using .gitignore.
 
-4. Course Fee Data
+##4. Course Fee Data
 
 The private course-fee data used in this lab is:
 
@@ -64,7 +64,10 @@ Course	Fee
 CS101	₹12,000
 AI202	₹18,000
 DS303	₹15,000
-5. Questions Used
+
+---
+
+##5. Questions Used
 Q1
 
 What is the fee for AI202?
@@ -80,8 +83,9 @@ Is DS303 more expensive than CS101, and by how much?
 Q4
 
 Write a two-line welcome message for new AI students.
+---
 
-6. System 1 — Plain LLM Chatbot
+##6. System 1 — Plain LLM Chatbot
 
 The chatbot sends the question directly to the LLM without providing the private course-fee data or any tools.
 
@@ -107,7 +111,9 @@ Observation
 
 The chatbot could generate general text, but it did not have access to the private course-fee information.
 
-7. System 2 — Rule-Based Workflow
+---
+
+##7. System 2 — Rule-Based Workflow
 
 The workflow uses predefined rules and does not use an LLM.
 
@@ -129,7 +135,9 @@ Observation
 
 The workflow was reliable for questions covered by its predefined rules, but it could not handle questions outside those rules.
 
-8. System 3 — Tool-Using AI Agent
+---
+
+##8. System 3 — Tool-Using AI Agent
 
 The agent uses an LLM together with two tools:
 
@@ -167,7 +175,10 @@ Q: Write a two-line welcome message for new AI students.
 
 A: Welcome to the AI program!
 We're thrilled to have you join our community of innovators and thinkers.
-9. Challenge Question
+
+---
+
+##9. Challenge Question
 Question
 
 I can pay Rs. 30,000. Which two courses can I take together within this budget?
@@ -195,7 +206,9 @@ CS101 + DS303	₹27,000
 
 Both combinations are within the ₹30,000 budget.
 
-10. Observations
+---
+
+##10. Observations
 
 The following table is based on the actual runs performed during the lab.
 
@@ -211,7 +224,10 @@ Number of LLM calls per question	1	0	Varies
 One strength	Simple and conversational	Fast and predictable	Flexible and tool-using
 One weakness	No access to private data	Rigid predefined rules	Depends on LLM/tool-calling
 Best suited for	General conversation	Fixed rule-based tasks	Dynamic tasks requiring tools
-11. Agent Trace — Question 2
+
+---
+
+##11. Agent Trace — Question 2
 Question
 
 What is the total fee for CS101 and AI202 after a 10% scholarship?
@@ -220,7 +236,10 @@ Step	Tool called and arguments	Result (observation)
 1	get_course_fee({'course_code': 'CS101'})	12000
 2	get_course_fee({'course_code': 'AI202'})	18000
 3	calculator({'expression': '(12000+18000)*0.9'})	27000.0
-12. Response Time Measurements
+
+---
+
+##12. Response Time Measurements
 
 The response times were measured using PowerShell Measure-Command.
 
@@ -249,7 +268,10 @@ TotalSeconds : 6.9904537
 Approximate time:
 
 ~7.2 seconds
-13. Key Comparison
+
+---
+
+##13. Key Comparison
 Chatbot
 Uses only the LLM.
 Does not have access to private course-fee data.
@@ -267,7 +289,10 @@ Can combine multiple tool results.
 Can perform calculations using the calculator tool.
 Can handle new questions more flexibly.
 Tool-calling behavior depends on the LLM.
-14. Setup
+
+---
+
+##14. Setup
 Create Virtual Environment
 python -m venv venv
 
@@ -289,7 +314,9 @@ MODEL=openai/gpt-oss-20b
 
 Never commit or share the .env file because it contains the API key.
 
-15. How to Run
+---
+
+##15. How to Run
 Check Setup
 python check_setup.py
 Run Chatbot
