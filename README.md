@@ -1,18 +1,4 @@
-\# AI Day 1 Lab
 
-\## Agentic AI: Foundations and Open-Source Practice
-
-This lab compares three approaches for solving the same college course-fee problem:
-
-1\. \*\*Plain LLM Chatbot\*\*
-
-2\. \*\*Rule-Based Workflow\*\*
-
-3\. \*\*Tool-Using AI Agent\*\*
-
-The purpose of the lab is to understand the difference between a chatbot, a deterministic workflow, and an agent that can select and use tools.
-
-\---
 # AI Day 1 Lab
 
 ## Agentic AI: Foundations and Open-Source Practice
